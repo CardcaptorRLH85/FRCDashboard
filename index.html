@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>FRC Dashboard</title>
     <link href="css/style.css" rel="stylesheet">
+	<link id="theme-link" rel="stylesheet" href>
+	<link rel="stylesheet" href="css/gyro.css">
 </head>
 
 <body>
@@ -42,7 +44,7 @@
             <circle cx="100" cy="410" r="25"></circle>
             <circle cx="260" cy="410" r="25"></circle>
             <rect x="60" y="380" width="250" height="30"></rect>
-            <text id="team" x="185" y="405" text-anchor="middle">####</text>
+            <text id="team" x="185" y="405" text-anchor="middle">0322</text>
         </svg>
     </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
@@ -54,12 +56,22 @@
             <p id="example-readout">Value is undefined</p>
         </div>
         <!-- Autonomous selector -->
-        <div class="select-container">
-            <select id="auto-select">
-                <option>No auto modes found</option>
-                <!-- This gets populated by JS -->
-            </select>
-        </div>
+		<div class="select-container">
+			<select id="auto-select">
+				<option>Robot disconnected</option>
+			</select>
+		</div>
+		<!-- Theme Selector -->
+		<p>Theme:</p>
+			<div class="select-container">
+				<select id='theme-select'>
+					<option>dark</option>
+					<option>light</option>
+					<option>red</option>
+					<option>blue</option>
+					<option>rainbow</option>
+				</select>
+			</div>
         <div>
             <p>Adjust arm height</p>
             <input id="arm-position" type="range" min="0" max="1200" value="770">
@@ -71,6 +83,9 @@
             <button id="connect" disabled>Connecting</button>
         </div>
     </div>
+	<script src="components/autoselection.js"></script>
+	<script src="components/themes.js"></script>
+	<script src="components/gyro.js"></script>
     <script src="tryIPC.js"></script>
     <script src="networktables/networktables.js"></script>
     <script src="ui.js"></script>
