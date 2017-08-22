@@ -80,7 +80,7 @@ function onRobotConnection(connected) {
             connect.disabled = false;
             connect.firstChild.data = 'Connect';
             // Add the default address and select xxxx
-            address.value = 'roborio-xxxx.local';
+            address.value = 'roborio-322.local';
             address.focus();
             address.setSelectionRange(8, 12);
             // On click try to connect and disable the input and the button
@@ -106,8 +106,9 @@ let updateGyro = (key, value) => {
     ui.gyro.arm.style.transform = `rotate(${ui.gyro.visualVal}deg)`;
     ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
 };
-NetworkTables.addKeyListener('/SmartDashboard/drive/navx/yaw', updateGyro);
+NetworkTables.addKeyListener('/SmartDashboard/Gyro Angle', updateGyro);
 
+/*
 // The following case is an example, for a robot with an arm at the front.
 // Info on the actual robot that this works with can be seen at thebluealliance.com/team/1418/2016.
 NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
@@ -123,7 +124,8 @@ NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
     // Rotate the arm in diagram to match real arm
     ui.robotDiagram.arm.style.transform = `rotate(${armAngle}deg)`;
 });
-
+*/
+/*
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/example_variable', (key, value) => {
     // Sometimes, NetworkTables will pass booleans as strings. This corrects for that.
@@ -134,6 +136,7 @@ NetworkTables.addKeyListener('/SmartDashboard/example_variable', (key, value) =>
     ui.example.button.classList.toggle('active', value);
     ui.example.readout.data = 'Value is ' + (value ? 'true' : 'false');
 });
+*/
 
 NetworkTables.addKeyListener('/SmartDashboard/time_running', (key, value) => {
     // Sometimes, NetworkTables will pass booleans as strings. This corrects for that.
