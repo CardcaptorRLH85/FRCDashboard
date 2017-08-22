@@ -148,6 +148,7 @@ aside {
 aside > * {
     margin-bottom: 20px;
 }
+/*.logo {}*/
 .greybox {
     position: fixed;
     bottom: 0;
